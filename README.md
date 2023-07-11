@@ -12,7 +12,7 @@ Fixed-like version 5.5.5 of [aoi.js](https://www.npmjs.com/package/aoi.js)
 
 **Based on aoi.js v5.5.5, all credits go to Leref and his contributors.**
 
-[NPM](http://npmjs.org/package/aoi.js) **|** [Docs](https://docs.oxijs) **|** [Original aoi.js](https://npmjs.com/package/aoi.js)
+[NPM](http://npmjs.org/package/oxi.js) **|** [Docs]([https://docs.oxijs](https://oxtag4.gitbook.io/oxi.js-docs)) **|** [Original aoi.js](https://npmjs.com/package/aoi.js)
     
 </div>
 
