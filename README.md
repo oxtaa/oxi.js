@@ -130,7 +130,7 @@ oxi.js, and _aoi.js_ are not affiliated or associated with Discord or any other 
 
 **This is _not_ an official release of aoi.js**
 
-> aoi.js is managed by [Akarui Development Team](https://discord.gg/HMUfMXDQsV), I'm just modifying the original code from and old version.   
+> aoi.js is managed by [Akarui Development Team](https://discord.gg/HMUfMXDQsV), I'm just modifying the original code from an old version.   
     
 ## Akarui and aoi.js Links
 - [aoi.js Website](https://aoi.js.org)
