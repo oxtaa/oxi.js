@@ -71,7 +71,7 @@ $authorID - This will return the user ID who executed the function
 ### How does it work?
 
 Simple! By using `$` as a sense of a function to execute, it'll be run by a command.
-If you use `$` after the function name, and its additional fields, (if there are any) it'll work as intended by it function.
+If you use `$` after the function name, and its additional fields, _(if there are any)_ it'll work as intended
 
 ## Events
 
