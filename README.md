@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://aoi.js.org">
-    <img width="400" src="[https://github.com/aoijs/website/blob/master/assets/images/aoijs-new.png?raw=true](https://media.discordapp.net/attachments/1026680546513928265/1128393072401723463/142_sin_titulo_20230710212509.png?width=1025&height=351)" alt="aoijs">
+    <img width="400" src="https://media.discordapp.net/attachments/1026680546513928265/1128393072401723463/142_sin_titulo_20230710212509.png?width=1025&height=351" alt="aoijs">
   </a>
 </p>
 
