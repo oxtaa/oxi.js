@@ -95,8 +95,8 @@ const oxi = require("oxi.js")
 const bot = new oxi.Bot({
 token: "TOKEN", // Your Discord bot token
 prefix: "!", // You can change this
-intents: ["GUILDS", "GUILD_MESSAGES"] // Intents
-  database: { // This will change the database to any other that you want, not required!
+intents: ["GUILDS", "GUILD_MESSAGES"], // Intents
+database: { // This will change the database to any other that you want, not required!
     db: require("dbdjs.db"),
     type: "dbdjs.db",
     path: "./database/",
