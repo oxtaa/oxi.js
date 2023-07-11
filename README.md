@@ -10,7 +10,7 @@ Fixed-like version 5.5.5 of [aoi.js](https://www.npmjs.com/package/aoi.js)
 
 **Based on aoi.js v5.5.5, all credits go to Leref and his contributors.**
 
-[NPM](http://npmjs.org/package/oxi.js) **|** [Docs](https://oxtag4.gitbook.io/oxi.js) **|** [Original aoi.js](https://npmjs.com/package/aoi.js)
+[NPM](http://npmjs.org/package/oxi.js) **|** [Original aoi.js](https://npmjs.com/package/aoi.js)
     
 </div>
 
@@ -26,7 +26,7 @@ Fixed-like version 5.5.5 of [aoi.js](https://www.npmjs.com/package/aoi.js)
 - Added extra functions: `$attachmentWidth`, `$attachmentHeight`, `$clientName`, `$clientTag`, `$clientAvatar`, `$djsVersion`, `$isDM`.
 - Modified AoiClient, AoiWarning, AoiError
 - Renamed some functions:
-`$activity` is now `$userActivity`, `$status` is now `$userStatus`. More info of these functions in our [documentation](https://oxtag4.gitbook.io/oxi.js)
+`$activity` is now `$userActivity`, `$status` is now `$userStatus`. 
 - Updated to discord.js v13.16.0
 
 ## Installation
