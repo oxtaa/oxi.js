@@ -27,9 +27,7 @@ Fixed-like version 5.5.5 of [aoi.js](https://www.npmjs.com/package/aoi.js)
 
 - Added extra functions: `$attachmentWidth`, `$attachmentHeight`, `$clientName`, `$clientTag`, `$clientAvatar`, `$djsVersion`, `$isDM`.
 - Renamed some functions:
-`$activity` is now `$userActivity`
-`$status` is now `$userStatus`
-More info of these functions in our [documentation](https://oxtag4.gitbook.io/oxi.js-docs)
+`$activity` is now `$userActivity`, `$status` is now `$userStatus`. More info of these functions in our [documentation](https://oxtag4.gitbook.io/oxi.js-docs)
 
 ## Installation
 
