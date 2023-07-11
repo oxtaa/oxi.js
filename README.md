@@ -17,18 +17,19 @@ Fixed-like version 5.5.5 of [aoi.js](https://www.npmjs.com/package/aoi.js)
 </div>
 
 ## Table of Contents
-- [Features](#features) 
+- [Mods](#mods) 
 - [Installation](#installation)
 - [Setup](#setup)
 - [Events](#events)
 - [Disclaimer](#disclaimer)
-- [Links](#links)
 
-## Features
+## Mods
 
-- Built-in support of [database](https://www.npmjs.com/package/dbdjs.db) by default and ready for multipurpose.
-- Simple to learn, all in string-based and compact.
-- Support of extensions available to be used by the community.
+- Added extra functions: `$attachmentWidth`, `$attachmentHeight`, `$clientName`, `$clientTag`, `$clientAvatar`, `$djsVersion`, `$isDM`.
+- Renamed some functions:
+`$activity` is now `$userActivity`
+`$status` is now `$userStatus`
+More info of these functions in our [documentation](https://oxtag4.gitbook.io/oxi.js-docs)
 
 ## Installation
 
@@ -48,17 +49,17 @@ yarn add oxi.js
 ```javascript
 const oxi = require("oxi.js")
 
-const bot = new oxi.Bot({
+const client = new oxi.Bot({
 token: "TOKEN", // Your Discord bot token
 prefix: "!", // You can change this
 intents: ["GUILDS", "GUILD_MESSAGES"] // Intents
 })
 
 // Events
-bot.onMessage()
+client.onMessage()
 
 // CMD Example
-bot.command({
+client.command({
 name: "ping",
 code: `Pong! $pingms`
 })
