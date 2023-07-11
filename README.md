@@ -78,7 +78,7 @@ If you use `$` after the function name, and its additional fields, _(if there ar
 This helps developers create certain events to occur within their Client. There are several events within oxi.js _(aoi.js)_, an example event is when the Client is ready and logged onto the API.
 
 ```javascript
-bot.readyCommand({ //Event Command
+client.readyCommand({ //Event Command
     channel: "", // The channel for logging (Optional)
     code: `$log[The bot is ready!]` // This will log to the console "The bot is ready!"
 })
@@ -92,7 +92,7 @@ oxi.js includes the original database of aoi.js, [dbdjs.db](https://npmjs.com/pa
 
 const oxi = require("oxi.js")
 
-const bot = new oxi.Bot({
+const client = new oxi.Bot({
 token: "TOKEN", // Your Discord bot token
 prefix: "!", // You can change this
 intents: ["GUILDS", "GUILD_MESSAGES"], // Intents
