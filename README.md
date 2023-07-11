@@ -4,8 +4,6 @@
   </a>
 </p>
 
-<h1 align="center">oxi.js</h1>
-
 <div align="center">
 
 Fixed-like version 5.5.5 of [aoi.js](https://www.npmjs.com/package/aoi.js)
