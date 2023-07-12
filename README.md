@@ -67,7 +67,7 @@ code: `Pong! $pingms`
 
 ### Function usage Example
 
-```
+```php
 $authorID - This will return the user ID who executed the function
 ```
 
@@ -89,7 +89,7 @@ client.readyCommand({ //Event Command
 
 ## Database
 
-oxi.js includes the original database of aoi.js, [dbdjs.db](https://npmjs.com/package/dbdjs.db) _(now with v6 default database changed to [aoi.db](https://npmjs.com/package/aoi.db))_. oxi.js has support for another databases _(just like the original v5.5.5 does)_. Below is an example using the default database.
+oxi.js includes the original database of aoi.js, [dbdjs.db](https://npmjs.com/package/dbdjs.db). oxi.js has support for another databases. Below is an example using the default database.
 
 ```javascript
 
@@ -119,7 +119,7 @@ Use this on your precaution!
 
 Do you want to make your Discord Bot different from others, possibly with the ability to play/stream music, it's simple and easy to use!
 
-```
+```php
 $playTrack[type;name] - To play a track from the available third parties supported. 
 ```
 More info in the [official aoi.js documentation](https://aoi.js.org/5.5.5/docs/)
