@@ -6,7 +6,7 @@
 
 <div align="center">
 
-Fixed-like version 5.5.5 of [aoi.js](https://www.npmjs.com/package/aoi.js)
+Fixed-like version of aoi.js v5.5.5
 
 
 **Based on aoi.js v5.5.5, all credits go to Leref and his contributors.**
@@ -28,6 +28,7 @@ Fixed-like version 5.5.5 of [aoi.js](https://www.npmjs.com/package/aoi.js)
 - Modified AoiClient, AoiWarning, AoiError
 - Renamed some functions:
 `$activity` is now `$userActivity`, `$status` is now `$userStatus`. 
+### More changes explained on [docs](https://oxtag4.gitbook.io/oxi.js)
 - Updated to discord.js v13.16.0
 
 ## Installation
