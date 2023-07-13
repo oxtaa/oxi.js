@@ -51,8 +51,7 @@ const oxi = require("oxi.js")
 const client = new oxi.Bot({
 token: "TOKEN", // Your Discord bot token
 prefix: "!", // You can change this
-intents: ["GUILDS", "GUILD_MESSAGES"], // Intents
-autoUpdate: true
+intents: ["GUILDS", "GUILD_MESSAGES"] // Intents
 })
 
 // Events
@@ -98,8 +97,7 @@ const oxi = require("oxi.js")
 const client = new oxi.Bot({
 token: "TOKEN", // Your Discord bot token
 prefix: "!", // You can change this
-intents: ["GUILDS", "GUILD_MESSAGES"], // Intents
-autoUpdate: true,
+intents: ["GUILDS", "GUILD_MESSAGES"] // Intents
 database: { // This will change the database to any other that you want, not required!
     db: require("dbdjs.db"),
     type: "dbdjs.db",
