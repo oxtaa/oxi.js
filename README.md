@@ -24,10 +24,9 @@ Fixed-like version of aoi.js v5.5.5
 
 ## Mods
 
-- Added extra functions: `$attachmentWidth`, `$attachmentHeight`, `$clientName`, `$clientTag`, `$clientAvatar`, `$djsVersion`, `$isDM`.
+- Added extra functions.
 - Modified AoiClient, AoiWarning, AoiError
-- Renamed some functions:
-`$activity` is now `$userActivity`, `$status` is now `$userStatus`. 
+- Renamed some functions, ex: `$activity` is now `$userActivity`, `$status` is now `$userStatus`. 
 ### More changes explained on [docs](https://oxtag4.gitbook.io/oxi.js)
 - Updated to discord.js v13.16.0
 
@@ -52,7 +51,8 @@ const oxi = require("oxi.js")
 const client = new oxi.Bot({
 token: "TOKEN", // Your Discord bot token
 prefix: "!", // You can change this
-intents: ["GUILDS", "GUILD_MESSAGES"] // Intents
+intents: ["GUILDS", "GUILD_MESSAGES"], // Intents
+autoUpdate: true
 })
 
 // Events
@@ -99,6 +99,7 @@ const client = new oxi.Bot({
 token: "TOKEN", // Your Discord bot token
 prefix: "!", // You can change this
 intents: ["GUILDS", "GUILD_MESSAGES"], // Intents
+autoUpdate: true,
 database: { // This will change the database to any other that you want, not required!
     db: require("dbdjs.db"),
     type: "dbdjs.db",
