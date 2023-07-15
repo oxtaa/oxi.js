@@ -12,9 +12,11 @@ module.exports = async (d) => {
     const rolePos = member.roles.cache.filter(role => role.color !== 0);
     const highestRole = rolePos.sort((a, b) => b.position - a.position).first();
     
+    if (!highestRole) {
+        data.result = "#" + 808080
+    } else {
     data.result = "#" + highestRole.color.toString(16);
-
-
+    }
     return {
         code: d.util.setCode(data)
     }
