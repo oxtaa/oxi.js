@@ -1,3 +1,4 @@
+//modified
 const Discord = require("discord.js");
 
 const { VariableManager } = require("./Variables.js");
@@ -72,7 +73,7 @@ class BaseClient extends Discord.Client {
 
     this.variableManager = new VariableManager(this);
 
-    if (options.autoUpdate) {
+    if (!options.disableAutoUpdate) {
       require("../handler/AoiAutoUpdate.js")();
     }
 
