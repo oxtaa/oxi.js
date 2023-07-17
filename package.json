@@ -1,0 +1,57 @@
+{
+  "name": "oxi.js",
+  "version": "1.3.0",
+  "description": "An aoi.js v5.5.5 based package that updates some important things and adds extra functions.",
+  "main": "src/index.js",
+  "typings": "src/index.d.ts",
+  "scripts": {
+    "start": "node index.js",
+    "prettycheck": "prettier --check \\\"src/**/*.js\\\"",
+    "prettywrite": "prettier --write \\\"src/**/*.js\\\""
+  },
+  "engines": {
+    "node": ">=16.6.0"
+  },
+  "files": [
+    "src"
+  ],
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oxtaa/oxi.js.git"
+  },
+  "keywords": [
+    "oxi.js",
+    "aoi.js",
+    "aoijs",
+    "aoi",
+    "discord.js",
+    "bdfd"
+  ],
+  "author": "oxta.",
+  "types": "./src/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/oxtaa/oxi.js/issues"
+  },
+  "homepage": "https://github.com/oxtaa/oxi.js#readme",
+  "dependencies": {
+    "axios": "0.24.0",
+    "dbdjs.db": "2.0.2",
+    "discord.js": "13.16.0",
+    "mathjs": "11.8.2",
+    "sharp": "0.32.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.4.1"
+  },
+  "optionalDependencies": {
+    "@akarui/aoi.music": "^1.2.6"
+  },
+  "type": "commonjs"
+}

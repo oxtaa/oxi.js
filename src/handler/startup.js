@@ -1,4 +1,4 @@
-const Interpreter = require("../interpreter.js");
+const Interpreter = require("../core/interpreter.js");
 /*Copyright © 2021 @Akarui Development*/
 
 module.exports = async (client) => {

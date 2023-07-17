@@ -3,7 +3,7 @@ const { TextChannel } = require("discord.js");
 const Client = require("../../classes/AoiClient.js");
 const Voice = require("../../classes/Voice.js");
 const { AoiError } = require("../../index.js");
-const Interpreter = require("../../interpreter.js");
+const Interpreter = require("../../core/interpreter.js");
 /**
  * @param  {Track} track
  * @param  {TextChannel} Channel

@@ -1,5 +1,5 @@
 const { AoiError } = require("../../index.js");
-const Interpreter = require("../../interpreter.js");
+const Interpreter = require("../../core/interpreter.js");
 
 module.exports = async (track, Channel, client, voice) => {
   if (voice.pruneMusic) {

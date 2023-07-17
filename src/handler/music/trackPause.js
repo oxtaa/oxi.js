@@ -1,5 +1,5 @@
 const { AoiError } = require("../../index.js");
-const Interpreter = require("../../interpreter.js");
+const Interpreter = require("../../core/interpreter.js");
 
 module.exports = async (Channel, client, voice) => {
   const cmds = voice.cmd.trackPause.allValues();

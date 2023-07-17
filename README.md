@@ -49,19 +49,24 @@ yarn add oxi.js
 const oxi = require("oxi.js")
 
 const client = new oxi.Bot({
-token: "TOKEN", // Your Discord bot token
-prefix: "!", // You can change this
-intents: ["GUILDS", "GUILD_MESSAGES"] // Intents
-})
+  token: "TOKEN", // Your Discord bot token
+  prefix: "!", // You can change this
+  intents: [
+    "guilds",
+    "guildMessages",
+    "messageContent"
+  ] // Intents
+});
 
 // Events
-client.onMessage()
+client.onMessage();
 
 // CMD Example
 client.command({
-name: "ping",
-code: `Pong! $pingms`
-})
+  type: "default",
+  name: "ping",
+  code: `Pong! $pingms`
+});
 ```
 
 ### Function usage Example
@@ -80,9 +85,10 @@ If you use `$` after the function name, and its additional fields, _(if there ar
 This helps developers create certain events to occur within their Client. There are several events within oxi.js _(aoi.js)_, an example event is when the Client is ready and logged onto the API.
 
 ```javascript
-client.readyCommand({ //Event Command
-    channel: "", // The channel for logging (Optional)
-    code: `$log[The bot is ready!]` // This will log to the console "The bot is ready!"
+client.command({ //Event Command
+  type: "ready",
+  channel: "", // The channel for logging (Optional)
+  code: `$log[The bot is ready!]` // This will log to the console "The bot is ready!"
 })
 ```
 
@@ -95,10 +101,14 @@ oxi.js includes the original database of aoi.js, [dbdjs.db](https://npmjs.com/pa
 const oxi = require("oxi.js")
 
 const client = new oxi.Bot({
-token: "TOKEN", // Your Discord bot token
-prefix: "!", // You can change this
-intents: ["GUILDS", "GUILD_MESSAGES"] // Intents
-database: { // This will change the database to any other that you want, not required!
+  token: "TOKEN", // Your Discord bot token
+  prefix: "!", // You can change this
+  intents: [
+    "guilds",
+    "guildMessages",
+    "messageContent"
+  ], // Intents
+  database: { // This will change the database to any other that you want, not required!
     db: require("dbdjs.db"),
     type: "dbdjs.db",
     path: "./database/",
@@ -112,7 +122,7 @@ This is clearly optional, if you want to keep your database by default, don't mi
 
 Here's the music integration! oxi.js **only supports `@akarui/aoi.music` v1.2.6**, _just as aoi.js v5.5.5 does_
 ```bash
-npm install @akarui/aoi.music@1.2.6
+npm install --no-optional oxi.js
 ```
 Use this on your precaution!
 
@@ -121,7 +131,7 @@ Do you want to make your Discord Bot different from others, possibly with the ab
 ```php
 $playTrack[type;name] - To play a track from the available third parties supported. 
 ```
-More info in the [official aoi.js documentation](https://aoi.js.org/5.5.5/docs/)
+More info in the [official aoi.js documentation](https://aoi.js.org/docs/5.5.5/)
 
 
 ## Disclaimer
@@ -137,4 +147,4 @@ oxi.js, and _aoi.js_ are not affiliated or associated with Discord or any other 
 - [aoi.js NPM page](https://www.npmjs.com/package/aoi.js)
 - [aoi.js Github](https://github.com/AkaruiDevelopment/aoi.js)
 - [aoi.js Discord Support Server](https://discord.gg/HMUfMXDQsV)
-- [aoi.js v5.5.5 Documentation](https://aoi.js.org/5.5.5/docs/)
+- [aoi.js v5.5.5 Documentation](https://aoi.js.org/docs/5.5.5/)

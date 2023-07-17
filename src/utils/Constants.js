@@ -16,6 +16,7 @@ const IntentOptions = {
   directMessages: "DIRECT_MESSAGES",
   directMessageReactions: "DIRECT_MESSAGE_REACTIONS",
   directMessageTyping: "DIRECT_MESSAGE_TYPING",
+  messageContent: "MESSAGE_CONTENT"
 };
 IntentOptions.all = Object.values(IntentOptions);
 
