@@ -49,19 +49,24 @@ yarn add oxi.js
 const oxi = require("oxi.js")
 
 const client = new oxi.Bot({
-token: "TOKEN", // Your Discord bot token
-prefix: "!", // You can change this
-intents: ["GUILDS", "GUILD_MESSAGES"] // Intents
-})
+  token: "TOKEN", // Your Discord bot token
+  prefix: "!", // You can change this
+  intents: [
+    "guilds",
+    "guildMessages",
+    "messageContent"
+  ] // Intents
+});
 
 // Events
-client.onMessage()
+client.onMessage();
 
 // CMD Example
 client.command({
-name: "ping",
-code: `Pong! $pingms`
-})
+  type: "default",
+  name: "ping",
+  code: `Pong! $pingms`
+});
 ```
 
 ### Function usage Example
@@ -80,9 +85,10 @@ If you use `$` after the function name, and its additional fields, _(if there ar
 This helps developers create certain events to occur within their Client. There are several events within oxi.js _(aoi.js)_, an example event is when the Client is ready and logged onto the API.
 
 ```javascript
-client.readyCommand({ //Event Command
-    channel: "", // The channel for logging (Optional)
-    code: `$log[The bot is ready!]` // This will log to the console "The bot is ready!"
+client.command({ //Event Command
+  type: "ready",
+  channel: "", // The channel for logging (Optional)
+  code: `$log[The bot is ready!]` // This will log to the console "The bot is ready!"
 })
 ```
 
@@ -95,10 +101,14 @@ oxi.js includes the original database of aoi.js, [dbdjs.db](https://npmjs.com/pa
 const oxi = require("oxi.js")
 
 const client = new oxi.Bot({
-token: "TOKEN", // Your Discord bot token
-prefix: "!", // You can change this
-intents: ["GUILDS", "GUILD_MESSAGES"] // Intents
-database: { // This will change the database to any other that you want, not required!
+  token: "TOKEN", // Your Discord bot token
+  prefix: "!", // You can change this
+  intents: [
+    "guilds",
+    "guildMessages",
+    "messageContent"
+  ], // Intents
+  database: { // This will change the database to any other that you want, not required!
     db: require("dbdjs.db"),
     type: "dbdjs.db",
     path: "./database/",
