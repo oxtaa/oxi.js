@@ -1,5 +1,5 @@
 const { Group } = require( "./structures/dist" );
-const {functions: parser, maps,grp} = require("../functions/parser.js");
+const {functions: parser, maps,grp} = require("../core/parser.js");
 
 class Function {
     constructor(code, name) {
@@ -57,7 +57,7 @@ class FunctionManager {
         this.functions = /*Object.keys(parser)*/ parser;
         this.cache = new Group();
         this.cacheFunctions();
-        this.interpreter = require("../interpreter.js");
+        this.interpreter = require("../core/interpreter.js");
         this.usage = grp;
     }
 
@@ -74,7 +74,7 @@ class FunctionManager {
                     this.cache.set(
                         ogname,
                         new Function(
-                            require(`../functions/Funcs/${file}/${ogname}.js`),
+                            require(`../functions/${file}/${ogname}.js`),
                             func,
                         ),
                     );
