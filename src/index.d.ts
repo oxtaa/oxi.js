@@ -76,6 +76,73 @@ class Blacklist {
 }
 
 // Commands
+export type CommandTypes = "default" | 
+"awaited" | 
+"messageDelete" | 
+"messageUpdate" | 
+"messageDeleteBulk" | 
+"guildJoin" | 
+"guildUpdate" | 
+"guildLeave" | 
+"guildUnavailable" | 
+"roleCreate" | 
+"roleUpdate" | 
+"roleDelete" | 
+"channelCreate" | 
+"channelUpdate" | 
+"channelDelete" | 
+"channelPinsUpdate" | 
+"stageInstanceCreate" | 
+"stageInstanceUpdate" | 
+"stageInstanceDelete" | 
+"stickerCreate" | 
+"stickerDelete" | 
+"stickerUpdate" | 
+"threadCreate" | 
+"threadDelete" | 
+"threadListSync" | 
+"threadMemberUpdate" | 
+"threadMembersUpdate" | 
+"threadUpdate" | 
+"join" | 
+"leave" | 
+"memberUpdate" | 
+"memberAvailable" | 
+"membersChunk" | 
+"emojiCreate" | 
+"emojiUpdate" | 
+"emojiDelete" | 
+"banAdd" | 
+"banRemove" | 
+"webhookUpdate" | 
+"inviteCreate" | 
+"inviteDelete" | 
+"voiceStateUpdate" | 
+"presenceUpdate" | 
+"reactionAdd" | 
+"reactionRemove" | 
+"reactionRemoveEmoji" | 
+"reactionRemoveAll" | 
+"typingStart" | 
+"loop" | 
+"timeout" | 
+"pulse" | 
+"ready" | 
+"variableCreate" | 
+"variableDelete" | 
+"variableUpdate" | 
+"functionError" | 
+"interaction" | 
+"applicationCmdCreate" | 
+"applicationCmdUpdate" | 
+"applicationCmdDelete" | 
+"userUpdate" | 
+"rateLimit" | 
+"shardReady" | 
+"shardResume" | 
+"shardReconnecting" | 
+"shardDisconnect" | 
+"shardError";
 interface BaseCommand {
     code: string;
 }
@@ -85,6 +152,7 @@ interface EventCommand extends BaseCommand {
     [key: string]: any;
 }
 interface Command extends BaseCommand {
+    type?: CommandTypes;
     name: string;
     aliases?: string | Array<string>;
     async?: boolean;

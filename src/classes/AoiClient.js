@@ -736,18 +736,23 @@ class Client extends BaseClient {
         });
     }
 
-    //commands
+    /**
+     * Adds a command to the client.
+     * @param  {import("../index").Command[]} args 
+     */
     command(...args) {
         for (const d of args) {
-            if (!d.name)
-                throw new TypeError(`Command ${this.cmd.default.size} needs a name!`);
-            if (!d.code)
-                throw new TypeError(`Command ${this.cmd.default.size} needs a code!`);
-
-            this.cmd.default.set(this.cmd.default.size, new Command(d, this));
+            if (!d.name) throw new TypeError(`Command ${this.cmd.default.size} needs a name!`);
+            if (!d.code) throw new TypeError(`Command ${this.cmd.default.size} needs a code!`);
+            if (!("type" in d)) d.type = "default";
+            if (!this.cmd.types.includes(d.type)) throw new TypeError(`Invalid command type in ${this.cmd.default.size}`);
+            this.cmd[d.type].set(this.cmd[d.type].size, new Command(d, this));
         }
     }
 
+    /**
+     * @deprecated
+     */
     awaitedCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(`Code is not provided in ${d.name}`);
@@ -761,6 +766,9 @@ class Client extends BaseClient {
         this.cmd.awaited.set(this.cmd.awaited.size, new Command(d, this));
     }
 
+    /**
+     * @deprecated
+     */
     deletedCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -774,6 +782,9 @@ class Client extends BaseClient {
         );
     }
 
+    /**
+     * @deprecated
+     */
     updateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -788,6 +799,9 @@ class Client extends BaseClient {
         );
     }
 
+    /**
+     * @deprecated
+     */
     bulkDeleteCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -802,7 +816,9 @@ class Client extends BaseClient {
         );
     }
 
-    //-------------------//
+    /**
+     * @deprecated
+     */
     guildJoinCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -814,6 +830,9 @@ class Client extends BaseClient {
         this.cmd.guildJoin.set(this.cmd.guildJoin.size, new Command(d, this));
     }
 
+    /**
+     * @deprecated
+     */
     guildLeaveCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -825,6 +844,9 @@ class Client extends BaseClient {
         this.cmd.guildLeave.set(this.cmd.guildLeave.size, new Command(d, this));
     }
 
+    /**
+     * @deprecated
+     */
     guildUpdateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -836,6 +858,9 @@ class Client extends BaseClient {
         this.cmd.guildUpdate.set(this.cmd.guildUpdate.size, new Command(d, this));
     }
 
+    /**
+     * @deprecated
+     */
     guildUnavailableCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -850,6 +875,9 @@ class Client extends BaseClient {
         );
     }
 
+    /**
+     * @deprecated
+     */
     roleCreateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -860,6 +888,9 @@ class Client extends BaseClient {
         this.cmd.roleCreate.set(this.cmd.roleCreate.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     roleUpdateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -870,6 +901,9 @@ class Client extends BaseClient {
         this.cmd.roleUpdate.set(this.cmd.roleUpdate.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     roleDeleteCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -880,6 +914,9 @@ class Client extends BaseClient {
         this.cmd.roleDelete.set(this.cmd.roleDelete.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     channelCreateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -890,6 +927,9 @@ class Client extends BaseClient {
         this.cmd.channelCreate.set(this.cmd.channelCreate.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     channelUpdateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -900,6 +940,9 @@ class Client extends BaseClient {
         this.cmd.channelUpdate.set(this.cmd.channelUpdate.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     channelDeleteCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -910,6 +953,9 @@ class Client extends BaseClient {
         this.cmd.channelDelete.set(this.cmd.channelDelete.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     channelPinsUpdateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -921,6 +967,9 @@ class Client extends BaseClient {
         this.cmd.channelPinsUpdate.set(this.cmd.channelPinsUpdate.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     stageInstanceCreateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -932,6 +981,9 @@ class Client extends BaseClient {
         this.cmd.stageInstanceCreate.set(this.cmd.stageInstanceCreate.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     stageInstanceUpdateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -943,6 +995,9 @@ class Client extends BaseClient {
         this.cmd.stageInstanceUpdate.set(this.cmd.stageInstanceUpdate.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     stageInstanceDeleteCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -954,6 +1009,9 @@ class Client extends BaseClient {
         this.cmd.stageInstanceDelete.set(this.cmd.stageInstanceDelete.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     threadCreateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -964,6 +1022,9 @@ class Client extends BaseClient {
         this.cmd.threadCreate.set(this.cmd.threadCreate.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     threadUpdateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -974,6 +1035,9 @@ class Client extends BaseClient {
         this.cmd.threadUpdate.set(this.cmd.threadUpdate.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     threadDeleteCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -984,6 +1048,9 @@ class Client extends BaseClient {
         this.cmd.threadDelete.set(this.cmd.threadDelete.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     threadListSyncCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -994,6 +1061,9 @@ class Client extends BaseClient {
         this.cmd.threadListSync.set(this.cmd.threadListSync.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     threadMemberUpdateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1005,7 +1075,9 @@ class Client extends BaseClient {
         this.cmd.threadMemberUpdate.set(this.cmd.threadMemberUpdate.size, d);
     }
 
-    //--------------------------------//
+    /**
+     * @deprecated
+     */
     joinCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1016,6 +1088,9 @@ class Client extends BaseClient {
         this.cmd.join.set(this.cmd.join.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     leaveCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1026,6 +1101,9 @@ class Client extends BaseClient {
         this.cmd.leave.set(this.cmd.leave.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     memberUpdateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1037,6 +1115,9 @@ class Client extends BaseClient {
         this.cmd.memberUpdate.set(this.cmd.memberUpdate.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     threadMembersUpdateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1047,6 +1128,9 @@ class Client extends BaseClient {
         this.cmd.membersUpdate.set(this.cmd.membersUpdate.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     memberAvailableCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1057,6 +1141,9 @@ class Client extends BaseClient {
         this.cmd.memberAvailable.set(this.cmd.memberAvailable.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     membersChunkCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1067,7 +1154,9 @@ class Client extends BaseClient {
         this.cmd.membersChunk.set(this.cmd.membersChunk.size, d);
     }
 
-    //---------------------------------//
+    /**
+     * @deprecated
+     */
     emojiCreateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1078,6 +1167,9 @@ class Client extends BaseClient {
         this.cmd.emojiCreate.set(this.cmd.emojiCreate.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     emojiDeleteCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1088,6 +1180,9 @@ class Client extends BaseClient {
         this.cmd.emojiDelete.set(this.cmd.emojiDelete.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     emojiUpdateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1098,7 +1193,9 @@ class Client extends BaseClient {
         this.cmd.emojiUpdate.set(this.cmd.emojiUpdate.size, d);
     }
 
-    //--------------------------------//
+    /**
+     * @deprecated
+     */
     banAddCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1109,6 +1206,9 @@ class Client extends BaseClient {
         this.cmd.banAdd.set(this.cmd.banAdd.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     banRemoveCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1119,7 +1219,9 @@ class Client extends BaseClient {
         this.cmd.banRemove.set(this.cmd.banRemove.size, d);
     }
 
-    //---------------------------------//
+    /**
+     * @deprecated
+     */
     inviteCreateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1130,6 +1232,9 @@ class Client extends BaseClient {
         this.cmd.inviteCreate.set(this.cmd.inviteCreate.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     inviteDeleteCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1140,7 +1245,9 @@ class Client extends BaseClient {
         this.cmd.inviteDelete.set(this.cmd.inviteDelete.size, d);
     }
 
-    //---------------------------------//
+    /**
+     * @deprecated
+     */
     reactionAddCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1151,6 +1258,9 @@ class Client extends BaseClient {
         this.cmd.reactionAdd.set(this.cmd.reactionAdd.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     reactionRemoveCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1161,6 +1271,9 @@ class Client extends BaseClient {
         this.cmd.reactionRemove.set(this.cmd.reactionRemove.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     reactionRemoveAllCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1172,6 +1285,9 @@ class Client extends BaseClient {
         this.cmd.reactiomRemoveAll.set(this.cmd.reactionRemoveAll.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     reactionRemoveEmojiCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1183,7 +1299,9 @@ class Client extends BaseClient {
         this.cmd.reactionRemoveEmoji.set(this.cmd.reactionRemoveEmoji.size, d);
     }
 
-    //---------------------------------//
+    /**
+     * @deprecated
+     */
     presenceUpdateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1194,7 +1312,9 @@ class Client extends BaseClient {
         this.cmd.presenceUpdate.set(this.cmd.presenceUpdate.size, d);
     }
 
-    //---------------------------------//
+    /**
+     * @deprecated
+     */
     voiceStateUpdateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1206,7 +1326,9 @@ class Client extends BaseClient {
         this.cmd.voiceStateUpdate.set(this.cmd.voiceStateUpdate.size, d);
     }
 
-    //---------------------------------//
+    /**
+     * @deprecated
+     */
     interactionCommand(d = {}) {
         if (!d.prototype) {
             throw new TypeError(
@@ -1227,6 +1349,9 @@ class Client extends BaseClient {
         );
     }
 
+    /**
+     * @deprecated
+     */
     applicationCmdCreateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1238,6 +1363,9 @@ class Client extends BaseClient {
         this.cmd.applicationCmdCreate?.set(this.cmd.applicationCmdCreate.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     applicationCmdDeleteCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1249,6 +1377,9 @@ class Client extends BaseClient {
         this.cmd.applicationCmdDelete?.set(this.cmd.applicationCmdDelete.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     applicationCmdUpdateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1263,6 +1394,9 @@ class Client extends BaseClient {
         );
     }
 
+    /**
+     * @deprecated
+     */
     userUpdateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1273,6 +1407,9 @@ class Client extends BaseClient {
         this.cmd.userUpdate?.set(this.cmd.userUpdate.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     variableCreateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1283,6 +1420,9 @@ class Client extends BaseClient {
         this.cmd.variableCreate?.set(this.cmd.variableCreate.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     variableDeleteCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1293,6 +1433,9 @@ class Client extends BaseClient {
         this.cmd.variableDelete?.set(this.cmd.variableDelete.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     variableUpdateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1303,6 +1446,9 @@ class Client extends BaseClient {
         this.cmd.variableUpdate?.set(this.cmd.variableUpdate.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     readyCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1313,6 +1459,9 @@ class Client extends BaseClient {
         this.cmd.ready?.set(this.cmd.ready.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     functionErrorCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1323,6 +1472,9 @@ class Client extends BaseClient {
         this.cmd.functionError?.set(this.cmd.functionError.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     loopCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1333,6 +1485,9 @@ class Client extends BaseClient {
         this.cmd.loop?.set(this.cmd.loop.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     timeoutCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1343,6 +1498,9 @@ class Client extends BaseClient {
         this.cmd.timeout?.set(this.cmd.timeout.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     pulseCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1353,6 +1511,9 @@ class Client extends BaseClient {
         this.cmd.pulse?.set(this.cmd.pulse.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     rateLimitCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
@@ -1363,6 +1524,9 @@ class Client extends BaseClient {
         this.cmd.rateLimit?.set(this.cmd.rateLimit.size, d);
     }
 
+    /**
+     * @deprecated
+     */
     webhookUpdateCommand(d = {}) {
         if (!d.code) {
             throw new TypeError(
