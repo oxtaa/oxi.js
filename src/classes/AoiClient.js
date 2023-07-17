@@ -5,6 +5,10 @@ const { FunctionManager } = require("./Functions.js");
 
 //Initialize aoi.js Client
 class Client extends BaseClient {
+    /**
+     * 
+     * @param {import("../index").ClientOptions} options OxiClient options.
+     */
     constructor(options) {
         super(options);
         this.functionManager = new FunctionManager(this);
