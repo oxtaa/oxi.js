@@ -121,7 +121,7 @@ Do you want to make your Discord Bot different from others, possibly with the ab
 ```php
 $playTrack[type;name] - To play a track from the available third parties supported. 
 ```
-More info in the [official aoi.js documentation](https://aoi.js.org/5.5.5/docs/)
+More info in the [official aoi.js documentation](https://aoi.js.org/docs/)
 
 
 ## Disclaimer
@@ -137,4 +137,3 @@ oxi.js, and _aoi.js_ are not affiliated or associated with Discord or any other 
 - [aoi.js NPM page](https://www.npmjs.com/package/aoi.js)
 - [aoi.js Github](https://github.com/AkaruiDevelopment/aoi.js)
 - [aoi.js Discord Support Server](https://discord.gg/HMUfMXDQsV)
-- [aoi.js v5.5.5 Documentation](https://aoi.js.org/5.5.5/docs/)
