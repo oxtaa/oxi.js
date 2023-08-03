@@ -4,7 +4,19 @@ module.exports = d => {
 
     const varData = d.data.vars[varName?.addBrackets()];
     if (object && object.trim() !== '') {
-      data.result = JSON.parse(varData)[object]
+      const properties = object.split('.');
+      let value = JSON.parse(varData);
+
+      for (const prop of properties) {
+        if(value[prop] !== undefined) {
+          value = value[prop];
+        } else {
+          value = null;
+          break;
+        }
+      }
+
+      data.result = value
     } else {
       const json = JSON.stringify(JSON.parse(varData))
       if (json.length > 2000) {
