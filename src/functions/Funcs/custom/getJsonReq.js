@@ -5,7 +5,7 @@ module.exports = d => {
     const varData = d.data.vars[varName?.addBrackets()];
     if (object && object.trim() !== '') {
       const properties = object.split('.');
-      let value = JSON.parse(varData);
+      let value = JSON.parse(JSON.stringify(varData));
 
       for (const prop of properties) {
         if(value[prop] !== undefined) {

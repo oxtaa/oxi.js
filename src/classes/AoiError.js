@@ -182,65 +182,47 @@ class AoiError {
       case "message":
         ans = `\`\`\`js\noxiError: ${d.func}: Invalid Message ID Provided In ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine},\n   line : \`${
-          d.command.codeLines[d.funcLine - 1]
-        }\`,\n   path : "${d.command.__path__}" \n }\`\`\``;
+        } \n { \n   lineNumber : ${d.funcLine}\n }\`\`\``;
         break;
       case "channel":
         ans = `\`\`\`js\noxiError: ${d.func}: Invalid Channel ID Provided In ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine},\n   line : \`${
-          d.command.codeLines[d.funcLine - 1]
-        }\`,\n   path : "${d.command.__path__}" \n }\`\`\``;
+        } \n { \n   lineNumber : ${d.funcLine}\n}\`\`\``;
         break;
       case "user":
         ans = `\`\`\`js\noxiError: ${d.func}: Invalid User ID Provided In ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine},\n   line : \`${
-          d.command.codeLines[d.funcLine - 1]
-        }\`,\n   path : "${d.command.__path__}" \n }\`\`\``;
+        } \n { \n   lineNumber : ${d.funcLine}\n }\`\`\``;
         break;
       case "member":
         ans = `\`\`\`js\noxiError: ${d.func}: Invalid Member ID Provided In ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine},\n   line : \`${
-          d.command.codeLines[d.funcLine - 1]
-        }\`,\n   path : "${d.command.__path__}" \n }\`\`\``;
+        } \n { \n   lineNumber : ${d.funcLine}\n }\`\`\``;
         break;
       case "role":
         ans = `\`\`\`js\noxiError: ${d.func}: Invalid Role ID Provided In ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine},\n   line : \`${
-          d.command.codeLines[d.funcLine - 1]
-        }\`,\n   path : "${d.command.__path__}" \n }\`\`\``;
+        } \n { \n   lineNumber : ${d.funcLine}\n }\`\`\``;
         break;
       case "guild":
         ans = `\`\`\`js\noxiError: ${d.func}: Invalid Guild ID Provided In ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine},\n   line : \`${
-          d.command.codeLines[d.funcLine - 1]
-        }\`,\n   path : "${d.command.__path__}" \n }\`\`\``;
+        } \n { \n   lineNumber : ${d.funcLine}\n  }\`\`\``;
         break;
       case "emoji":
         ans = `\`\`\`js\noxiError: ${d.func}: Invalid Emoji ID Provided In ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine},\n   line : \`${
-          d.command.codeLines[d.funcLine - 1]
-        }\`,\n   path : "${d.command.__path__}" \n }\`\`\``;
+        } \n { \n   lineNumber : ${d.funcLine}\n  }\`\`\``;
         break;
       case "option":
         ans = `\`\`\`js\noxiError: ${d.func}: Invalid Option ID Provided In ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine},\n   line : \`${
-          d.command.codeLines[d.funcLine - 1]
-        }\`,\n   path : "${d.command.__path__}" \n }\`\`\``;
+        } \n { \n   lineNumber : ${d.funcLine}\n }\`\`\``;
         break;
       case "custom":
         ans = `\`\`\`js\noxiError: ${d.func}: ${message} ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine},\n   line : \`${
-          d.command.codeLines[d.funcLine - 1]
-        }\`,\n   path : "${d.command.__path__}" \n }\`\`\``;
+        } \n { \n   lineNumber : ${d.funcLine}\n }\`\`\``;
         break;
     }
     return ans;

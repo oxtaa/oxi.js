@@ -1,7 +1,7 @@
 // added by oxta.
 module.exports = async (d) => {
     const data = d.util.aoiFunc(d);
-    const [userid = d.author?.id, guildid = d.guild?.id, option = 'id'] = data.inside.splits;
+    const [userid = d.author?.id, guildid = d.guild?.id] = data.inside.splits;
 
     const guild = await d.util.getGuild(d, guildid);
     if (!guild) return d.aoiError.fnError(d, 'guild', {inside: data.inside});

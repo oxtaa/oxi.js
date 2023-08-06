@@ -1,4 +1,3 @@
-//modified
 const Discord = require("discord.js");
 
 const { VariableManager } = require("./Variables.js");

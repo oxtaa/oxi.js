@@ -153,9 +153,9 @@ class LoadCommands {
           debugs.push(
             `|${this.colors.failLoad?.command || ""}'${
               cmd.name || cmd.channel
-            }'| ${this.colors.failLoad?.type || ""}${cmd.type}${
+            }'| ${this.colors.failLoad?.type || ""} ${cmd.type} ${
               this.allColors.reset
-            }| ${this.colors.failLoad?.text || ""}Failed To Load${
+            }| ${this.colors.failLoad?.text || ""} false ${
               this.allColors.reset
             }|
 |-------------------------------------------|`,
@@ -166,10 +166,9 @@ class LoadCommands {
 
         debugs.push(`|${this.colors.loaded?.command || ""}'${
           cmd.name || cmd.channel
-        }' |${this.colors.loaded?.type || ""}${cmd.type} ${
+        }'|${this.colors.loaded?.type || ""} ${cmd.type} ${
           this.allColors.reset || ""
-        }|${this.colors.loaded?.text || ""}Loaded${this.allColors.reset || ""}|
-|------------------------------------------|`);
+        }|${this.colors.loaded?.text || ""} true ${this.allColors.reset || ""}|`);
       }
     }
 
@@ -179,7 +178,7 @@ class LoadCommands {
           this.allColors.reset
         }  |  ${this.colors.loaded?.type || ""}Type${
           this.allColors.reset
-        }  |  ${this.colors.loaded?.text}State${this.allColors.reset}  |
+        }  |  Loaded?${this.allColors.reset}  |
 |------------------------------------------|\n` + debugs.join("\n"),
       );
     }

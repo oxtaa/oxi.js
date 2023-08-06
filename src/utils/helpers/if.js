@@ -15,7 +15,7 @@ const IF = async (d) => {
 
             if (!code.toLowerCase().includes("$endif"))
                 return message.channel.send(
-                    `\`AoiError: $if: Invalid Usage: missing $endif\``,
+                    `\`\`\`js\noxiError: $if: Invalid Usage: missing $endif\n\`\`\``,
                 );
 
             const everything = code.split(/\$if\[/gi)[r].split(/\$endif/gi)[0];
@@ -51,7 +51,7 @@ const IF = async (d) => {
                 for (const data of statement.split(/\$elseif\[/gi).slice(1)) {
                     if (!data.toLowerCase().includes("$endelseif"))
                         return message.channel.send(
-                            `\`AoiError: $elseIf: Invalid Usage: missing $endelseIf\``,
+                            `\`\`\`js\noxiError: $elseIf: Invalid Usage: missing $endelseif\n\`\`\``,
                         );
 
                     const inside = data.split(/\$endelseIf/gi)[0];

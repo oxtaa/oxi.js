@@ -9,12 +9,11 @@ module.exports = async d => {
     
     try {
         const jsonData = await axios.get(url);
-        const value = JSON.stringify(jsonData.data);
+        const value = jsonData.data;
 
         d.vars[varName.addBrackets()] = value.addBrackets();
         d.data.vars = d.vars;
     } catch (error) {
-        console.log(error)
         return d.aoiError.fnError(d, 'custom', {}, `Unexpected error when trying to make JSON request.`);
     }
 
