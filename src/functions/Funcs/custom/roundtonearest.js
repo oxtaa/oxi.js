@@ -1,22 +1,22 @@
 // modified by oxta.
 module.exports = async (d) => {
-    data = d.util.aoiFunc(d);
-    const [number] = data.inside.splits;
+  data = d.util.aoiFunc(d);
+  const [number] = data.inside.splits;
 
-    const numlength = number.length;
-    const num = parseInt(number);
+  const numLength = number.length;
+  const num = parseInt(number);
 
-    if (numlength > 2) {
-      const exponent = Math.floor((numlength - 1) / 3);
-      const divisor = 10 ** (exponent * 3);
-      const roundedNum = Math.round(num / divisor) * divisor;
-      const roundedEqual = roundedNum.toString().slice(0, - exponent) + "0".repeat(exponent);
-      data.result = roundedEqual
-    } else {
-      data.result = num;
-    };
+  if (numLength > 2) {
+    const ex = Math.floor((numLength - 1) / 3);
+    const div = 10 ** (ex * 3);
+    const rNum = Math.round(num / div) * div;
+    const rEq = rNum.toString().slice(0, - ex) + "0".repeat(ex);
+    data.result = rEq
+  } else {
+    data.result = num;
+  };
 
-    return {
-        code: d.util.setCode(data)
-    }
+  return {
+      code: d.util.setCode(data)
+  }
 }

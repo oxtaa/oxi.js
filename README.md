@@ -1,7 +1,7 @@
 # Introduction
 
 <p align="center">
-  <a href="https://aoi.js.org">
+  <a href="https://oxi.js.org">
     <img width="700" src="https://media.discordapp.net/attachments/1026680546513928265/1137058090982850651/Logo.png?width=1025&height=351" alt="oxijs">
   </a>
 </p>
@@ -13,7 +13,7 @@ Fixed-like version of aoi.js v5.5.5
 
 **Based on aoi.js v5.5.5, all credits go to Leref and his contributors.**
 
-[NPM](http://npmjs.org/package/oxi.js) **|** [Docs](https://oxtag4.gitbook.io/oxi.js)
+[NPM](http://npmjs.org/package/oxi.js) **|** [Docs](https://oxi.js.org)
     
 </div>
 
@@ -29,20 +29,15 @@ Fixed-like version of aoi.js v5.5.5
 - Added extra functions.
 - Modified AoiClient, AoiWarning, AoiError
 - Renamed some functions, ex: `$activity` is now `$userActivity`, `$status` is now `$userStatus`. 
-### More changes explained on [docs](https://oxtag4.gitbook.io/oxi.js)
+### More changes explained on [docs](https://oxi.js.org)
 - Updated to discord.js v13.16.0
 
 ## Installation
 
-**node.js 16.6.0 or newer is required.**  
-
+**NodeJS 16.6.0 or newer is required.**  
 
 ```bash
 npm install oxi.js
-```
-
-```bash
-yarn add oxi.js
 ```
 
 ## Setup
@@ -50,7 +45,7 @@ yarn add oxi.js
 ```javascript
 const oxi = require("oxi.js")
 
-const client = new oxi.Bot({
+const client = new oxi.Client({
 token: "TOKEN", // Your Discord bot token
 prefix: "!", // You can change this
 intents: ["GUILDS", "GUILD_MESSAGES"] // Intents
@@ -96,7 +91,7 @@ oxi.js includes the original database of aoi.js, [dbdjs.db](https://npmjs.com/pa
 
 const oxi = require("oxi.js")
 
-const client = new oxi.Bot({
+const client = new oxi.Client({
 token: "TOKEN", // Your Discord bot token
 prefix: "!", // You can change this
 intents: ["GUILDS", "GUILD_MESSAGES"] // Intents

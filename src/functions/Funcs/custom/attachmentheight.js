@@ -5,7 +5,11 @@ module.exports = async (d) => {
     const attachment = msg.attachments.first();
 
     if (attachment.contentType.includes('image')) {
-      data.result = attachment.width.toString();
+      try {
+        data.result = attachment.height.toString();
+      } catch (e) {
+        return d.aoiError.fnError(d, 'custom', {}, 'Unexpected error.')
+      }
     }
 
     return {
