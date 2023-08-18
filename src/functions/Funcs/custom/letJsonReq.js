@@ -9,7 +9,7 @@ module.exports = async d => {
     
     try {
         const jsonData = await axios.get(url);
-        const value = jsonData.data;
+        const value = JSON.stringify(jsonData.data);
 
         d.vars[varName.addBrackets()] = value.addBrackets();
         d.data.vars = d.vars;

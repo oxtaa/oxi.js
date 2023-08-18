@@ -1,3 +1,4 @@
+const pkg = require('../../../package.json')
 const IF = async (d) => {
     const interpreter = require("../../interpreter.js");
     let code = d.code;
@@ -15,7 +16,7 @@ const IF = async (d) => {
 
             if (!code.toLowerCase().includes("$endif"))
                 return message.channel.send(
-                    `\`\`\`js\noxiError: $if: Invalid Usage: missing $endif\n\`\`\``,
+                    `\`\`\`js\nOxiError: $if: Missing $endIf. \n{\n   version : "${pkg.version}"\n}\n\`\`\``,
                 );
 
             const everything = code.split(/\$if\[/gi)[r].split(/\$endif/gi)[0];
@@ -51,7 +52,7 @@ const IF = async (d) => {
                 for (const data of statement.split(/\$elseif\[/gi).slice(1)) {
                     if (!data.toLowerCase().includes("$endelseif"))
                         return message.channel.send(
-                            `\`\`\`js\noxiError: $elseIf: Invalid Usage: missing $endelseif\n\`\`\``,
+                            `\`\`\`js\nOxiError: $elseIf: Missing $endElseIf. \n{\n   version : "${pkg.version}"\n}\n\`\`\``,
                         );
 
                     const inside = data.split(/\$endelseIf/gi)[0];

@@ -1,6 +1,6 @@
 //modified
 module.exports = (statuses, client) => {
-  console.log("\x1b[32mEnabled custom status.\x1b[0m");
+  console.log("\x1b[32mCustom status has been enabled.\x1b[0m");
   if (statuses.size !== 0) {
     let y = 0;
 

@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const {CustomFunction} = require("./classes/Functions.js");
 const AoiError = require("./classes/AoiError.js");
 const Util = require("./classes/Util.js");
+const pkg = require('../package.json');
 
 //helpers of aoijs
 const {Time} = require("./utils/helpers/customParser.js");
@@ -115,7 +116,7 @@ const Interpreter = async (
             console.time(`interpreter-${start}`);
         }
 
-        if (command["$if"] === "v4") {
+        if (command["$if"] === "alt") {
             code = (
                 await IF({
                     client,
@@ -177,7 +178,7 @@ const Interpreter = async (
                                 else {
                                     return client.options.suppressAllErrors
                                         ? client.options.errorMessage
-                                        : `\`AoiError: ${this.func}: Invalid Usage (line : ${funcLine})\``;
+                                        : `\`\`\`js\nOxiError: ${this.func}: Invalid usage. \n{\n   lineNumber : ${funcLine},\n   version : "${pkg.version}"\n}\n\`\`\``;
                                 }
                             } else return false;
                         },
@@ -220,7 +221,7 @@ const Interpreter = async (
             );
             if (
                 functionObj instanceof CustomFunction &&
-                functionObj.type === "aoi.js"
+                functionObj.type === "oxi.js"
             ) {
                 const d = {};
                 Object.assign(d, functionObj);
@@ -293,7 +294,7 @@ const Interpreter = async (
                                 else {
                                     return client.options.suppressAllErrors
                                         ? client.options.errorMessage
-                                        : `\`AoiError: ${func}: Invalid Usage (line : ${funcLine})\``;
+                                        : `\`\`\`js\nOxiError: ${this.func}: Invalid usage. \n{\n   lineNumber : ${funcLine},\n   version : "${pkg.version}"\n}\n\`\`\``;
                                 }
                             } else return false;
                         },
@@ -368,7 +369,7 @@ const Interpreter = async (
                                 else {
                                     return client.options.suppressAllErrors
                                         ? client.options.errorMessage
-                                        : `\`AoiError: ${func}: Invalid Usage (line : ${funcLine})\``;
+                                        : `\`\`\`js\nOxiError: ${this.func}: Invalid usage. \n{\n   lineNumber : ${funcLine},\n   version : "${pkg.version}"\n}\n\`\`\``;
                                 }
                             } else return false;
                         },

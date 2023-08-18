@@ -6,11 +6,12 @@ const {
 const Util = require("./Util.js");
 const { Time } = require("../utils/helpers/customParser.js");
 const { Interaction } = require("discord.js");
+const pkg = require("../../package.json");
 
 class AoiError {
   constructor() {
-    const error = new Error(`Cannot initialize "oxiError" Class`);
-    error.name = "oxiError";
+    const error = new Error(`Cannot initialize "OxiError" Class`);
+    error.name = "OxiError";
     throw error;
   }
 
@@ -40,13 +41,13 @@ class AoiError {
   static CommandError(command, type, name, position) {
     if (type === "name") {
       const error = new Error(
-        `oxiError: "Name" property is missing in "${command}" (position: ${position})`,
+        `OxiError: "Name" property is missing in "${command}" (position: ${position})`,
       );
       error.name = "CommandNameError";
       throw error;
     } else if (type === "code") {
       const error = new Error(
-        `oxiError: "Code" is not provided in "${
+        `OxiError: "Code" is not provided in "${
           name || "the Command"
         }" : ${command} (position: ${position})`,
       );
@@ -54,7 +55,7 @@ class AoiError {
       throw error;
     } else if (type === "channel") {
       const error = new Error(
-        `oxiError: "Channel" is not provided in "${
+        `OxiError: "Channel" is not provided in "${
           name || "the Command"
         }" : ${command} (position: ${position})`,
       );
@@ -180,49 +181,49 @@ class AoiError {
     let ans;
     switch (type) {
       case "message":
-        ans = `\`\`\`js\noxiError: ${d.func}: Invalid Message ID Provided In ${
+        ans = `\`\`\`js\nOxiError: ${d.func}: Invalid Message ID Provided In ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine}\n }\`\`\``;
+        } \n{ \n   lineNumber : ${d.funcLine},\n    version : "${pkg.version}"\n}\`\`\``;
         break;
       case "channel":
-        ans = `\`\`\`js\noxiError: ${d.func}: Invalid Channel ID Provided In ${
+        ans = `\`\`\`js\nOxiError: ${d.func}: Invalid Channel ID Provided In ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine}\n}\`\`\``;
+        } \n{ \n   lineNumber : ${d.funcLine},\n   version : "${pkg.version}"\n}\`\`\``;
         break;
       case "user":
-        ans = `\`\`\`js\noxiError: ${d.func}: Invalid User ID Provided In ${
+        ans = `\`\`\`js\nOxiError: ${d.func}: Invalid User ID Provided In ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine}\n }\`\`\``;
+        } \n{ \n   lineNumber : ${d.funcLine},\n   version : "${pkg.version}"\n}\`\`\``;
         break;
       case "member":
-        ans = `\`\`\`js\noxiError: ${d.func}: Invalid Member ID Provided In ${
+        ans = `\`\`\`js\nOxiError: ${d.func}: Invalid Member ID Provided In ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine}\n }\`\`\``;
+        } \n{ \n   lineNumber : ${d.funcLine},\n   version : "${pkg.version}"\n}\`\`\``;
         break;
       case "role":
-        ans = `\`\`\`js\noxiError: ${d.func}: Invalid Role ID Provided In ${
+        ans = `\`\`\`js\nOxiError: ${d.func}: Invalid Role ID Provided In ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine}\n }\`\`\``;
+        } \n{ \n   lineNumber : ${d.funcLine},\n   version : "${pkg.version}"\n}\`\`\``;
         break;
       case "guild":
-        ans = `\`\`\`js\noxiError: ${d.func}: Invalid Guild ID Provided In ${
+        ans = `\`\`\`js\nOxiError: ${d.func}: Invalid Guild ID Provided In ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine}\n  }\`\`\``;
+        } \n{ \n   lineNumber : ${d.funcLine},\n   version : "${pkg.version}"\n}\`\`\``;
         break;
       case "emoji":
-        ans = `\`\`\`js\noxiError: ${d.func}: Invalid Emoji ID Provided In ${
+        ans = `\`\`\`js\nOxiError: ${d.func}: Invalid Emoji ID Provided In ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine}\n  }\`\`\``;
+        } \n{ \n   lineNumber : ${d.funcLine},\n   version : "${pkg.version}"\n}\`\`\``;
         break;
       case "option":
-        ans = `\`\`\`js\noxiError: ${d.func}: Invalid Option ID Provided In ${
+        ans = `\`\`\`js\nOxiError: ${d.func}: Invalid Option ID Provided In ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine}\n }\`\`\``;
+        } \n{ \n   lineNumber : ${d.funcLine},\n   version : "${pkg.version}"\n}\`\`\``;
         break;
       case "custom":
-        ans = `\`\`\`js\noxiError: ${d.func}: ${message} ${
+        ans = `\`\`\`js\nOxiError: ${d.func}: ${message} ${
           data.inside || ""
-        } \n { \n   lineNumber : ${d.funcLine}\n }\`\`\``;
+        } \n{ \n   lineNumber : ${d.funcLine},\n   version : "${pkg.version}"\n}\`\`\``;
         break;
     }
     return ans;

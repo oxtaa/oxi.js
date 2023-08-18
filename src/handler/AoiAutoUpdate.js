@@ -3,39 +3,39 @@ const axios = require("axios").default;
 const json = require("../../package.json");
 module.exports = async () => {
     console.log(
-        "oxi.js AutoUpdate: \u001b[33mExecuting a contact with API...\u001b[0m",
+        "oxi.js: \u001b[33mTrying to fetch latest version...\u001b[0m",
     );
 
     try {
-        const res = await axios.get("https://oxiapi.0xtag4.repl.co/json/oxi.js"); //This will change in v6 to be native.
-        if (json.version !== res.data.version) {
+        const res = await axios.get("https://registry.npmjs.com/oxi.js");
+        if (json.version !== res.data['dist-tags'].latest) {
             console.log(
-                "oxi.js AutoUpdate: \u001b[33mAvailable version v" +
-                res.data.version +
+                "oxi.js: \u001b[33mAvailable version v" +
+                res.data['dist-tags'].latest +
                 " ready to install.\u001b[0m",
             );
 
             // Install initiate
             console.log(
-                "oxi.js AutoUpdate: \u001b[33m Installing version...\u001b[0m",
+                "oxi.js: \u001b[33m Installing version" + data['dist-tags'].latest + "\u001b[0m",
             );
             const Process = exec("npm i oxi.js@latest", (error) => {
                 if (error)
                     return console.error(
-                        "oxi.js AutoUpdate: \u001b[31mERR!\u001b[0m " +
+                        "oxi.js: \u001b[31mERR!\u001b[0m " +
                         error.message,
                     );
 
                 console.log(
-                    "oxi.js AutoUpdate: \u001b[32mSuccessfully Installed oxi.js v" +
-                    res.data.version +
+                    "oxi.js: \u001b[32mSuccessfully Installed oxi.js v" +
+                    res.data['dist-tags'].latest +
                     ".\u001b[0m",
                 );
                 console.log(
-                    "oxi.js AutoUpdate: Commencing 'RESTART' in 3 Seconds...",
+                    "oxi.js: Restarting...",
                 );
 
-                setTimeout(Reboot, 3000);
+                setTimeout(Reboot, 1000);
             });
             Process.stdout.setEncoding("utf8");
             Process.stdout.on("data", (chunk) => {
@@ -48,12 +48,12 @@ module.exports = async () => {
             });
         } else {
             console.log(
-                "oxi.js AutoUpdate: \u001b[32mVersion is up-to-date.\u001b[0m",
+                "oxi.js: \u001b[32mVersion is up-to-date.\u001b[0m",
             );
         }
     } catch (error) {
         console.warn(
-            "oxi.js AutoUpdate: \u001b[31mUnexpected error when trying to reach API.\u001b[0m",
+            "oxi.js: \u001b[31mUnexpected error when trying to fetch latest version.\u001b[0m",
         );
     }
 };
@@ -70,7 +70,7 @@ function Reboot() {
         process.exit();
     } catch (e) {
         console.error(
-            `oxi.js AutoUpdate: \u001b[31mERR!\u001b[0m Failed to commence 'RESTART', ${e.message}`,
+            `oxi.js: \u001b[31mERR!\u001b[0m Restart failed, ${e.message}`,
         );
     }
 }
