@@ -145,6 +145,7 @@ String.prototype.addBrackets = function () {
     .replace(/#LB#/g, "(")
     .replace(/#RB#/g, ")")
     .replace(/#AND#/g, "&&")
+    .replace(/#BACKTICK#/g, "`")
     .replace(/#OR#/g, "||");
 };
 

@@ -1,4 +1,4 @@
-module.exports = async (d) => {
+module.exports = async d => {
     const data = d.util.aoiFunc(d);
     if (data.err) return d.error(data.err);
 
@@ -28,7 +28,7 @@ module.exports = async (d) => {
             {},
             `Variable "prefix" hasn't been added.`,
         );
-    }
+    };
 
     return {
         code: d.util.setCode(data),

@@ -12,12 +12,12 @@ module.exports = async d => {
 
     try {
         const userData = await axios.get(`https://discord.com/api/v9/users/${id}`, { headers });
-        const globalName = userData.data.global_name
+        const globalName = userData.data.global_name;
         if (globalName) {
             data.result = globalName;
         } else {
             data.result = user.username;
-        }
+        };
     } catch (e) {
         return d.aoiError.fnError(d, 'user', {inside: data.inside});
     };

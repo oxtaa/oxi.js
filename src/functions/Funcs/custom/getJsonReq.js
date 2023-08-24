@@ -14,19 +14,19 @@ module.exports = d => {
           value = null;
           break;
         }
-      }
+      };
 
-      data.result = value
+      data.result = value;
     } else {
-      const json = JSON.stringify(JSON.parse(varData))
+      const json = JSON.stringify(JSON.parse(varData));
       if (json.length > 2000) {
         return d.aoiError.fnError(d, 'custom', {}, 'The number of characters in the JSON exceeds 2000, try selecting a specific property.');
       } else {
-        data.result = json
-      }
-    }
+        data.result = json;
+      };
+    };
 
     return {
         code: d.util.setCode(data)
-    }
+    };
 }

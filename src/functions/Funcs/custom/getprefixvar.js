@@ -1,9 +1,6 @@
-//added
 module.exports = async d => {
     const data = d.util.aoiFunc(d);
-
-    let [guildID = d.guild?.id] = data.inside.splits;
-    varname = "prefix".addBrackets();
+    const [guildID = d.guild?.id] = data.inside.splits;
 
     if (!d.client.variableManager.has("prefix", d.client.db.tables[0])) return d.aoiError.fnError(d, 'custom', {}, `Variable "prefix" hasn't been added.`);
 
@@ -15,5 +12,5 @@ module.exports = async d => {
 
     return {
         code: d.util.setCode(data)
-    }
+    };
 }

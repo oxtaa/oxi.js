@@ -1,6 +1,5 @@
-//added by oxta.
-module.exports = async (d) => {
-    data = d.util.aoiFunc(d);
+module.exports = d => {
+    const data = d.util.aoiFunc(d);
     
     data.result = d.client.user.displayAvatarURL({
         size: 4096,
@@ -9,5 +8,5 @@ module.exports = async (d) => {
 
     return {
         code: d.util.setCode(data)
-    }
+    };
 }
