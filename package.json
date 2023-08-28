@@ -1,6 +1,6 @@
 {
   "name": "oxi.js",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "An aoi.js v5.5.5 based package that updates things and adds extra features.",
   "main": "src/index.js",
   "typings": "src/index.d.ts",

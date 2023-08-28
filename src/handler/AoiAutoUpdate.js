@@ -17,9 +17,9 @@ module.exports = async () => {
 
             // Install initiate
             console.log(
-                "oxi.js: \u001b[33m Installing version" + data['dist-tags'].latest + "\u001b[0m",
+                "oxi.js: \u001b[33m Installing version" + res.data['dist-tags'].latest + "\u001b[0m",
             );
-            const Process = exec("npm i oxi.js@latest", (error) => {
+            const Process = exec(`npm i oxi.js@${res.data['dist-tags'].latest}`, (error) => {
                 if (error)
                     return console.error(
                         "oxi.js: \u001b[31mERR!\u001b[0m " +
