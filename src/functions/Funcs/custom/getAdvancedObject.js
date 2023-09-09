@@ -12,10 +12,10 @@ module.exports = d => {
         };
     } else {
         try {
-            const evaled = eval(`d.data.objects.${objName}.${option}`)
-            data.result = (typeof evaled === 'object' ? JSON.stringify(evaled, null, format === 'yes' ? 2 : 0) : evaled) ?? 'undefined';
+            const evaled = eval(`d.data.objects.${objName.addBrackets()}.${option}`)
+            data.result = (typeof evaled === 'object' ? JSON.stringify(evaled, null, 2) : evaled) ?? 'undefined';
         } catch (e) {
-            data.result = 'undefined';
+            return d.aoiError.fnError(d, 'custom', {}, `Failed to get object with reason: ${e.message}`);
         }
     };
 

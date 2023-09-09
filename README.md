@@ -6,7 +6,7 @@
 
 <div align="center">
 
-**Fixed-like version of aoi.js v5.5.5**
+**An aoi.js v5.5.5 fork**
 
 [NPM](http://npmjs.org/package/oxi.js) **|** [Docs](https://oxi.js.org)
     
@@ -24,9 +24,9 @@ npm install oxi.js@latest
 const oxi = require("oxi.js");
 
 const client = new oxi.Bot({
-    token: "Your token",
-    prefix: "Your prefix",
-    intents: ["GUILDS", "GUILD_MESSAGES"]
+  token: "Your token",
+  prefix: "Your prefix",
+  intents: ["GUILDS", "GUILD_MESSAGES"]
 });
 
 client.onMessage();
@@ -53,8 +53,8 @@ This helps developers create certain events to occur within their Client. There 
 
 ```js
 client.readyCommand({ // Event Command
-    channel: "", // The channel for logging (Optional)
-    code: `$log[The bot is ready!]` // This will log to the console "The bot is ready!"
+  channel: "", // The channel for logging (Optional)
+  code: `$log[The bot is ready!]` // This will log to the console "The bot is ready!"
 })
 ```
 
